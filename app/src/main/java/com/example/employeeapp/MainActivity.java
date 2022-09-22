@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 db.update(employee);
                 employees = db.getAll();
                 customEmployeeList.updateData(employees);
-                cancelForm();
+                resetForm();
             }
         });
 
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 db.delete(employeeId);
                 employees.remove(employeeId);
                 customEmployeeList.notifyDataSetChanged();
-                cancelForm();
+                resetForm();
             }
         });
 
@@ -98,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 editSalary.setText(String.valueOf(employee.getSalary()));
                 employee.setId(id);
                 employeeId = employee;
-                btnUpdate.setVisibility(View.VISIBLE);
-                btnDelete.setVisibility(View.VISIBLE);
-                btnSave.setVisibility(View.GONE);
+//                btnUpdate.setVisibility(View.VISIBLE);
+//                btnDelete.setVisibility(View.VISIBLE);
+//                btnSave.setVisibility(View.GONE);
             }
         });
     }
@@ -128,10 +128,10 @@ public class MainActivity extends AppCompatActivity {
         editSalary.setText("");
     }
 
-    public void cancelForm() {
-        resetForm();
-        btnUpdate.setVisibility(View.GONE);
-        btnDelete.setVisibility(View.GONE);
-        btnSave.setVisibility(View.VISIBLE);
-    }
+//    public void cancelForm() {
+//        resetForm();
+//        btnUpdate.setVisibility(View.GONE);
+//        btnDelete.setVisibility(View.GONE);
+//        btnSave.setVisibility(View.VISIBLE);
+//    }
 }
