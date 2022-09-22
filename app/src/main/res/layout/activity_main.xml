@@ -57,6 +57,7 @@
         android:background="#f1f1f1"
         android:hint="Enter Salary"
         android:paddingStart="5dp"
+        android:inputType="number"
         tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
 
     <Button
