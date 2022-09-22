@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 db.update(employee);
                 employees = db.getAll();
                 customEmployeeList.updateData(employees);
-                resetForm();
+                cancelForm();
             }
         });
 
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 db.delete(employeeId);
                 employees.remove(employeeId);
                 customEmployeeList.notifyDataSetChanged();
-                resetForm();
+                cancelForm();
             }
         });
 
@@ -126,5 +126,12 @@ public class MainActivity extends AppCompatActivity {
         editName.setText("");
         editDesignation.setText("");
         editSalary.setText("");
+    }
+
+    public void cancelForm() {
+        resetForm();
+        btnUpdate.setVisibility(View.GONE);
+        btnDelete.setVisibility(View.GONE);
+        btnSave.setVisibility(View.VISIBLE);
     }
 }
